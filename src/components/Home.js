@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link for routing
+import { Link } from 'react-router-dom';  
 import cricketGif from '../assets/cricket.gif';
 
 const Home = () => {
