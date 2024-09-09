@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link for routing
 import cricketGif from '../assets/cricket.gif';
 
 const Home = () => {
@@ -15,19 +16,16 @@ const Home = () => {
             </div>
           </div>
           <div className="text-black text-5xl md:text-6xl lg:text-8xl font-semibold font-['Inter'] leading-tight">
-            Concerned About Hosting Tournaments? <span className="text-[#a2cf93]">Hit those worries out of the park !</span>
+            Concerned About Hosting Tournaments? <span className="text-[#a2cf93]">Hit those worries out of the park!</span>
           </div>
           <div className="text-black text-lg md:text-xl lg:text-2xl font-medium font-['Inter'] max-w-[600px]">
-            Our work has resulted in positive change. We have educated millions about healthcare conditions and reduced barriers to treatment and services.
+            Our work is to host cricket competitions focused on delivering thrilling and competitive cricket experiences, organizing tournaments in various formats, and fostering a vibrant community of players and fans alike.
           </div>
         </div>
         <div className="flex justify-start items-start gap-5">
-          <div className="px-7 py-4 bg-[#a2cf93] rounded-[33px] border border-[#7f7f7f] justify-center items-center gap-2.5 flex">
-            <div className="text-[#1b1b1b] text-lg md:text-xl font-semibold font-['Inter']">Schedule an appointment</div>
-          </div>
-          <div className="px-7 py-4 bg-[#fff5d2] rounded-[33px] border border-[#7f7f7f] justify-center items-center gap-2.5 flex">
-            <div className="text-[#1b1b1b] text-lg md:text-xl font-semibold font-['Inter']">Request a demo</div>
-          </div>
+          <Link to="/register" className="px-7 py-4 bg-[#a2cf93] rounded-[33px] border border-[#7f7f7f] justify-center items-center gap-2.5 flex">
+            <div className="text-[#1b1b1b] text-lg md:text-xl font-semibold font-['Inter']">Register for a tournament</div>
+          </Link>
         </div>
       </div>
       <div className="w-full md:w-1/2 h-full mt-10 md:mt-0 md:ml-10">
