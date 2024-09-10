@@ -23,7 +23,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-start items-start gap-5">
-          <Link to="/register" className="px-7 py-4 bg-[#a2cf93] rounded-[33px] border border-[#7f7f7f] justify-center items-center gap-2.5 flex">
+          <Link to="/register" className="px-7 py-4 bg-[#a2cf93] rounded-[33px] border border-[#7f7f7f] flex items-center justify-center gap-2.5 mb-5">
             <div className="text-[#1b1b1b] text-lg md:text-xl font-semibold font-['Inter']">Register for a tournament</div>
           </Link>
         </div>
