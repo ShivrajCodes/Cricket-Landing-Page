@@ -4,7 +4,7 @@ import cricketGif from '../assets/cricket.gif';
 
 const Home = () => {
   return (
-    <div className="w-full h-auto relative mt-20 flex flex-col md:flex-row">
+    <div className="w-full h-auto relative mt-20 flex flex-col md:flex-row mt-2.5 md:mt-0">
       <div className="flex flex-col justify-start items-start gap-14 w-full md:w-1/2 px-10 md:px-14">
         <div className="flex-col justify-start items-start gap-5 flex">
           <div className="pl-1.5 pr-5 py-1.5 bg-[#fff5d2]/50 rounded-[78px] justify-center items-center gap-2.5 inline-flex">
@@ -28,7 +28,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full md:w-1/2 h-full mt-10 md:mt-0 md:ml-10">
+      <div className="w-full md:w-1/2 h-full mt-10 mb-5 md:mt-0 md:ml-10">
         <img src={cricketGif} alt="Cricket" className="w-full h-auto object-cover rounded-[14px]" />
       </div>
     </div>
