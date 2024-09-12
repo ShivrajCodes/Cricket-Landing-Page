@@ -12,6 +12,8 @@ const RegisterTournaments = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,19 +23,39 @@ const RegisterTournaments = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log(formData);
-    setIsSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error('Something went wrong');
+      }
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (isSubmitted) {
-    return <div>Thank you, we will get in touch with you shortly.</div>;
+    return <div>Thank you for getting in touch, we will contact you soon.</div>;
   }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      {error && <div className="text-red-500">{error}</div>}
       <input
         type="text"
         name="name"
@@ -100,8 +122,12 @@ const RegisterTournaments = () => {
         className="p-2 border"
         required
       />
-      <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded">
-        Submit
+      <button
+        type="submit"
+        className="px-4 py-2 bg-green-500 text-white rounded"
+        disabled={loading}
+      >
+        {loading ? 'Submitting...' : 'Submit'}
       </button>
     </form>
   );

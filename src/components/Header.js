@@ -67,7 +67,7 @@ const Header = () => {
           {activeSection === 'contact' && <span className={underlineClass}></span>}
         </a>
         <a
-          href="#register"
+          href="/register"
           className="px-4 py-2 bg-[#fff5d2] rounded-[33px] border border-[#7f7f7f] flex items-center justify-center md:hidden"
         >
           <div className="text-[#1b1b1b] text-base font-semibold font-['Inter']">
@@ -77,7 +77,7 @@ const Header = () => {
       </nav>
 
       <a
-        href="#register"
+        href="/register"
         className="px-4 py-2 bg-[#fff5d2] rounded-[33px] border border-[#7f7f7f] flex items-center justify-center hidden md:flex"
       >
         <div className="text-[#1b1b1b] text-base font-semibold font-['Inter']">
