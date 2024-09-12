@@ -39,7 +39,6 @@ const About = () => {
 
   return (
     <div id="about-section" className="w-full h-auto overflow-x-hidden">
-      {/* First Section: About */}
       <div
         ref={aboutRef}
         className={`w-full h-auto bg-green-500 p-5 md:p-10 flex flex-col md:flex-row justify-between items-center transition-opacity duration-1000 ${
@@ -69,7 +68,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Second Section: Player Images */}
       <div
         ref={imageRef}
         className={`w-full h-auto p-5 md:p-10 flex justify-center items-center mt-10 transition-opacity duration-1000 ${
@@ -77,7 +75,6 @@ const About = () => {
         }`}
       >
         <div className="w-full max-w-[1200px] flex flex-col lg:flex-row items-center">
-          {/* Player Image Grid */}
           <div className="flex flex-col mb-10 lg:mb-0 lg:mr-10">
             <div className="flex gap-5 mb-5 justify-center">
               <img
@@ -105,7 +102,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Kohli's Image in the Center */}
           <div className="relative w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px] rounded-[11px] shadow border-8 border-[#fff5d2]">
             <img
               className="w-full h-full object-cover rounded-[11px]"
@@ -114,7 +110,6 @@ const About = () => {
             />
           </div>
 
-          {/* Text Section */}
           <div
             ref={textRef}
             className={`mt-10 lg:mt-0 lg:ml-10 flex flex-col justify-center text-center lg:text-left transition-opacity duration-1000 ${
