@@ -5,6 +5,7 @@ import sachinImage from '../assets/sachin.jpg';
 import dhoniImage from '../assets/dhoni.jpg';
 import bumrahImage from '../assets/bumrah.jpg';
 import bowlerImage from '../assets/bowler.png';
+import customerImg from '../assets/customerimg.jpeg';
 
 const useIntersectionObserver = (options) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -32,13 +33,14 @@ const useIntersectionObserver = (options) => {
   return [ref, isIntersecting];
 };
 
-const About = () => {
+const About = React.forwardRef((props, ref) => {
   const [aboutRef, aboutVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [imageRef, imageVisible] = useIntersectionObserver({ threshold: 0.2 });
   const [textRef, textVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
-    <div id="about-section" className="w-full h-auto overflow-x-hidden">
+    <div id="about-section" ref={ref} className="w-full h-auto overflow-x-hidden">
+      
       <div
         ref={aboutRef}
         className={`w-full h-auto bg-green-500 p-5 md:p-10 flex flex-col md:flex-row justify-between items-center transition-opacity duration-1000 ${
@@ -68,6 +70,7 @@ const About = () => {
         </div>
       </div>
 
+      
       <div
         ref={imageRef}
         className={`w-full h-auto p-5 md:p-10 flex justify-center items-center mt-10 transition-opacity duration-1000 ${
@@ -129,6 +132,148 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div className="w-full h-auto flex flex-col justify-center items-center mt-20">
+  <div className="w-full max-w-[935px] h-auto flex flex-wrap items-center justify-center text-center px-4 sm:px-0">
+    <span className="text-black text-[40px] sm:text-[84px] font-semibold font-['Inter']">
+      What are
+    </span>
+    <span className="text-[#a2cf93] text-[40px] sm:text-[84px] font-semibold font-['Inter']">
+      &nbsp;they
+    </span>
+    <span className="text-black text-[40px] sm:text-[84px] font-semibold font-['Inter']">
+      &nbsp;saying
+    </span>
+  </div>
+
+  
+  <div className="w-full max-w-[1400px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5 mt-10">
+    
+    <div className="w-full h-auto px-[15px] sm:px-[23px] py-[22px] bg-[#f9f9f9] rounded-[20px] border border-[#e2e2e2] flex flex-col justify-start items-start gap-[21px]">
+      <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+      XYZ Organization is the best when it comes to hosting cricket tournaments! They ensure everything runs smoothly, from scheduling matches to managing the teams. The staff is incredibly supportive, and the facilities are top-notch. Our team felt well taken care of throughout the tournament. The organization also puts a strong emphasis on fair play, which made the experience even more enjoyable. If you're looking for a professionally run cricket tournament, XYZ Organization is the way to go. We can’t wait to participate again next season!
+      </div>
+      <div className="flex justify-start items-center gap-[17px]">
+        <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full flex justify-center items-center">
+          <img className="w-full h-full object-cover" src={customerImg} alt="Sarah Smith" />
+        </div>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <div className="text-black text-lg sm:text-xl font-medium font-['Inter']">
+            Sam Smith
+          </div>
+          <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+            Cricketer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div className="w-full h-auto px-[15px] sm:px-[23px] py-[22px] bg-[#f9f9f9] rounded-[20px] border border-[#e2e2e2] flex flex-col justify-start items-start gap-[21px]">
+      <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+      I’ve been part of several cricket tournaments over the years, but XYZ Organization stands out for their professionalism and attention to detail. They provide great infrastructure, smooth communication, and an overall wonderful experience. The pitches were in excellent condition, and they had well-trained umpires ensuring fair gameplay. The event management was also exceptional, and the atmosphere was perfect for both players and spectators. I highly recommend XYZ Organization for any cricket enthusiast looking to compete in well-organized tournaments
+      </div>
+      <div className="flex justify-start items-center gap-[17px]">
+        <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full flex justify-center items-center">
+          <img className="w-full h-full object-cover" src={customerImg} alt="John Doe" />
+        </div>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <div className="text-black text-lg sm:text-xl font-medium font-['Inter']">
+            Joe Byers
+          </div>
+          <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+            Cricketer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div className="w-full h-auto px-[15px] sm:px-[23px] py-[22px] bg-[#f9f9f9] rounded-[20px] border border-[#e2e2e2] flex flex-col justify-start items-start gap-[21px]">
+      <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+      Our team participated in a tournament organized by XYZ Organization, and it was an incredible experience. The tournament was well-planned and executed with precision. The staff was helpful, and everything from the registration process to the final match was seamless. The level of competition was high, and we enjoyed every moment. XYZ Organization truly knows how to create a competitive but friendly environment, which made the tournament more enjoyable for everyone. We look forward to joining their future events!
+      </div>
+      <div className="flex justify-start items-center gap-[17px]">
+        <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full flex justify-center items-center">
+          <img className="w-full h-full object-cover" src={customerImg} alt="Jane Doe" />
+        </div>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <div className="text-black text-lg sm:text-xl font-medium font-['Inter']">
+            Tim Smith
+          </div>
+          <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+            Cricketer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div className="w-full h-auto px-[15px] sm:px-[23px] py-[22px] bg-[#f9f9f9] rounded-[20px] border border-[#e2e2e2] flex flex-col justify-start items-start gap-[21px]">
+      <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+      XYZ Organization exceeded our expectations with their cricket tournament. The venues were top-quality, and the entire event was organized with professionalism. The communication was excellent, and they kept everyone informed throughout the tournament. The rules were clear, and the matches were conducted fairly. What stood out the most was their commitment to ensuring that both players and spectators had a great experience. I highly recommend XYZ Organization to anyone looking for a well-run cricket event.
+      </div>
+      <div className="flex justify-start items-center gap-[17px]">
+        <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full flex justify-center items-center">
+          <img className="w-full h-full object-cover" src={customerImg} alt="Mark Lee" />
+        </div>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <div className="text-black text-lg sm:text-xl font-medium font-['Inter']">
+            David Oak
+          </div>
+          <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+            Cricketer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div className="w-full h-auto px-[15px] sm:px-[23px] py-[22px] bg-[#f9f9f9] rounded-[20px] border border-[#e2e2e2] flex flex-col justify-start items-start gap-[21px]">
+      <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+      I had the pleasure of participating in a cricket tournament hosted by XYZ Organization, and I must say, they did an outstanding job! The event was meticulously organized, with no delays or confusion. The facilities were impressive, and the tournament was a fantastic experience for both players and fans. XYZ Organization created an atmosphere that was both competitive and fun, which is exactly what you want in a sports event. Their professionalism and dedication to the sport are clear. I would definitely participate in their tournaments again
+      </div>
+      <div className="flex justify-start items-center gap-[17px]">
+        <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full flex justify-center items-center">
+          <img className="w-full h-full object-cover" src={customerImg} alt="Emily White" />
+        </div>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <div className="text-black text-lg sm:text-xl font-medium font-['Inter']">
+            John Walsh
+          </div>
+          <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+            Cricketer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div className="w-full h-auto px-[15px] sm:px-[23px] py-[22px] bg-[#f9f9f9] rounded-[20px] border border-[#e2e2e2] flex flex-col justify-start items-start gap-[21px]">
+      <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+      XYZ Organization knows how to put together a great cricket tournament. The pitches were fantastic, and the facilities were well-maintained. What impressed me most was their organization – everything ran on time, and the whole event was stress-free for us as participants. The staff was friendly and attentive, making sure all teams had what they needed. The competition was fierce, but it was all in the spirit of sportsmanship, thanks to the positive environment created by XYZ Organization. Highly recommended for anyone looking to join a quality cricket tournament
+      </div>
+      <div className="flex justify-start items-center gap-[17px]">
+        <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full flex justify-center items-center">
+          <img className="w-full h-full object-cover" src={customerImg} alt="David Brown" />
+        </div>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <div className="text-black text-lg sm:text-xl font-medium font-['Inter']">
+            Mitchell Brown
+          </div>
+          <div className="text-black text-sm sm:text-base font-normal font-['Inter']">
+            Cricketer
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+     
+
+
 
       <style jsx>{`
         @keyframes fadeIn {
@@ -144,6 +289,6 @@ const About = () => {
       `}</style>
     </div>
   );
-};
+});
 
 export default About;
