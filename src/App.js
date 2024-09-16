@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import RegisterTournament from './components/RegisterTournament';
 import About from './components/About';
+import Tournaments from './components/Tournaments.tsx';  // Import the Tournaments component
 
 function App() {
   const aboutRef = useRef(null);
@@ -20,6 +21,7 @@ function App() {
               <>
                 <Home />
                 <About ref={aboutRef} />
+                <Tournaments /> {/* Add the Tournaments component below the About component */}
               </>
             }
           />
