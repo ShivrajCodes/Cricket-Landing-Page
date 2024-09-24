@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setEmail(''); // Clear email after form submission
+    setEmail(''); 
   };
 
   return (
