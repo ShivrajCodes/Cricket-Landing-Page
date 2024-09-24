@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Header = ({ tournamentsRef }) => {
+const Header = ({ aboutRef }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -15,13 +15,13 @@ const Header = ({ tournamentsRef }) => {
 
   const activeLink = (path) => {
     return location.pathname === path
-      ? 'md:relative md:after:absolute md:after:left-0 md:after:right-0 md:after:bottom-[-5px] md:after:w-full md:after:h-[4px] md:after:bg-red-500 md:after:rounded-full md:after:h-[6px]'
+      ? 'md:relative md:after:absolute md:after:left-0 md:after:right-0 md:after:bottom-[-5px] md:after:w-full md:after:h-[4px] md:after:bg-red-500 md:after:rounded-full'
       : '';
   };
 
-  const handleScrollToTournaments = () => {
-    if (tournamentsRef.current) {
-      tournamentsRef.current.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     closeMenu();
   };
@@ -62,9 +62,16 @@ const Header = ({ tournamentsRef }) => {
         >
           Home
         </Link>
+        <button
+          onClick={handleScrollToAbout}
+          className={`text-white md:text-black text-base font-semibold font-['Inter'] px-2 ${activeLink('/about')} text-left`}
+        >
+          About
+        </button>
         <Link
-          onClick={handleScrollToTournaments}
+          to="/tournaments"
           className={`text-white md:text-black text-base font-semibold font-['Inter'] px-2 ${activeLink('/tournaments')}`}
+          onClick={closeMenu}
         >
           Tournaments
         </Link>
