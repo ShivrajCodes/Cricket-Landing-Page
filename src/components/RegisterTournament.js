@@ -59,7 +59,7 @@ const RegisterTournaments = () => {
   return (
     <div className="w-full h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="relative w-full h-full bg-white flex flex-col md:flex-row rounded-none shadow-lg border-8 border-white">
-        {/* Left Image Section */}
+        
         <div className="w-full md:w-1/2 h-full bg-[#ffe5c8] flex items-center justify-center">
           <img
             src={formImage}
@@ -68,15 +68,15 @@ const RegisterTournaments = () => {
           />
         </div>
 
-        {/* Form Section */}
+        
         <div className="w-full md:w-1/2 h-full p-8 flex flex-col">
-          {/* Greeting Text */}
+          
           <h1 className="text-4xl font-bold mb-4">Hey, Hello 👋</h1>
           <h2 className="text-lg mb-6">
             Welcome to our onboarding page, please enter your required details in the given form below, and BOOM! You are on the verge of some enthralling action.
           </h2>
 
-          {/* Form */}
+          
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {error && <div className="text-red-500">{error}</div>}
             <input
