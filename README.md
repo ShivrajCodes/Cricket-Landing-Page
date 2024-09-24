@@ -14,8 +14,8 @@ To deploy this application, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/xyz-organization.git
-   cd xyz-organization
+   git clone https://github.com/your-username/WebBuzz.git
+   cd WebBuzz
    ```
 
 2. **Install Dependencies**:
