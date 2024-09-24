@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Header = ({ aboutRef }) => {
+const Header = ({ tournamentsRef }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -19,9 +19,9 @@ const Header = ({ aboutRef }) => {
       : '';
   };
 
-  const handleScrollToAbout = () => {
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollToTournaments = () => {
+    if (tournamentsRef.current) {
+      tournamentsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     closeMenu();
   };
@@ -62,16 +62,9 @@ const Header = ({ aboutRef }) => {
         >
           Home
         </Link>
-        <button
-          onClick={handleScrollToAbout}
-          className={`text-white md:text-black text-base font-semibold font-['Inter'] px-2 ${activeLink('/about')} text-left`}
-        >
-          About
-        </button>
         <Link
-          to="/tournaments"
+          onClick={handleScrollToTournaments}
           className={`text-white md:text-black text-base font-semibold font-['Inter'] px-2 ${activeLink('/tournaments')}`}
-          onClick={closeMenu}
         >
           Tournaments
         </Link>
